@@ -3,9 +3,8 @@ then
 echo "Error: Invalid number of arguments."
 exit
 fi
-str='cat $1 | tr '\n' ' ''
+str=`cat $1 | tr '\n' ' '`
 for a in $str
 do
-echo "Word = $a, Count = 'grep -c "$a" $2'"
+echo "Word = $a, Count = `grep -c "$a" $2`"
 done
-
