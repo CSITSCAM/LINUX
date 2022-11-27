@@ -1,13 +1,11 @@
-BEGIN{print "record.\t characters \t words"}
-#BODY section
+BEGIN{total_len=0}
 {
 len=length($0)
 total_len+=len
-print(NR,":\t",len,":\t",NF,$0)
 words+=NF
 }
 END{
-print("\n total")
-print("characters :\t" total_len)
-print("lines :\t" NR)
+printf "Total no.of characters=%d\n", total_len
+printf "Total no.of words=%d\n",words
+printf "Total no.of lines=%d\n",NR
 }
